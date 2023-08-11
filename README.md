@@ -15,5 +15,6 @@
  in <code style="color:red">package.json</code>
 - add `"start": "node app.js"` to <code style="color:red">scripts</code>
  in <code style="color:red">package.json</code> to define a start script of the app
- 
-
+### 4. Setting the entry point
+- create file with name <code style="color:red">app.js</code>
+- setup server and check if it is running correct on local port
