@@ -55,3 +55,13 @@
 - create folder <code style="color:red">config</code>
 - create 2 files inside it <code style="color:red">default.json</code> and <code style="color:red">db.js</code>
 - add required code in them and test if the database is correctly connected by running `npm run app` and getting output `MongoDB is Connected...`
+
+# REST API
+### Building RESTful APIs with the MERN stack
+- create a folder named <code style="color:red">routes</code> and inside it create another folder <code style="color:red">api</code>
+- create a file <code style="color:red">books.js</code> in <code style="color:red">api</code> folder
+- write required code in it
+
+# Database model
+*to interact with our database, we have to create a model for each of resources
+- create a folder called <code style="color:red">models</code> in the root and inside the models folder, create a file called <code style="color:red">Books.js</code> where write the code for the schema
