@@ -131,6 +131,7 @@ In <code style="color:red">App.js</code> inside
 Add styling by adding CSS code in <code style="color:red">App.css</code> inside 
 <code style="color:red">src</code> folder
 
+### Add feature components
 
 
 
