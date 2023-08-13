@@ -64,4 +64,20 @@
 
 # Database model
 *to interact with our database, we have to create a model for each of resources
-- create a folder called <code style="color:red">models</code> in the root and inside the models folder, create a file called <code style="color:red">Books.js</code> where write the code for the schema
+- create a folder called <code style="color:red">models</code> in the root and inside the models folder, create a file called <code style="color:red">Books.js</code> where write the code for the schema/ Database model
+- Edit code in app.js
+```javascript
+// Import the books router
+const booksRouter = require('./routes/api/books');
+// Use the books router
+app.use('/api/books', booksRouter);
+```
+- Set up [Postman](https://www.postman.com/) to test out API endpoints
+
+# Authentication
+We will use [JWT](https://jwt.io/).
+
+- Add the code to app.js
+```javascript
+
+```

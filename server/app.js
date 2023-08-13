@@ -1,7 +1,7 @@
-// app.js
-
 const express = require('express');
 const connectDB = require('./config/db');   // connect database
+const cp = require('cookie-parser');        // connect cookie parser for authentication
+const jwt = require('jsonwebtoken');        // require jwt
 
 const app = express();
 
@@ -10,9 +10,29 @@ connectDB();
 
 // Import the books router
 const booksRouter = require('./routes/api/books');
-
 // Use the books router
 app.use('/api/books', booksRouter);
+
+// Use cookie-parser middleware for handling JWT tokens in cookies
+app.use(cp());
+// Set Cookie
+app.get("/set/cookie", (req, res) => {
+    const payload = {
+        name: 'John Doe',
+        age: '42',
+        website: 'johndoe.com'
+    };
+    const token = jwt.sign(payload, 'logrocket');
+    res.cookie("token", token, {
+        httpOnly: true
+    }).send("Cookie Shipped");
+});
+// Return all headers
+app.get("/get/cookie", (req, res) => {
+    const token = req.cookies.token;
+    const payload = jwt.verify(token, 'logrocket');
+    res.json({ token, payload });
+});
 
 app.get('/', (req, res) => res.send('Hello world!'));
 
