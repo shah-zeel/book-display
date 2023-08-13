@@ -79,5 +79,60 @@ We will use [JWT](https://jwt.io/).
 
 - Add the code to app.js
 ```javascript
-
+const jwt = require('jsonwebtoken');        // require jwt
 ```
+```javascript
+// Use cookie-parser middleware for handling JWT tokens in cookies
+app.use(cp());
+// Set Cookie
+app.get("/set/cookie", (req, res) => {
+    const payload = {
+        name: 'John Doe',
+        age: '42',
+        website: 'johndoe.com'
+    };
+    const token = jwt.sign(payload, 'logrocket');
+    res.cookie("token", token, {
+        httpOnly: true
+    }).send("Cookie Shipped");
+});
+// Return all headers
+app.get("/get/cookie", (req, res) => {
+    const token = req.cookies.token;
+    const payload = jwt.verify(token, 'logrocket');
+    res.json({ token, payload });
+});
+```
+
+# Frontend
+We will use React.
+
+### Set up Create React App
+- use the command `npx create-react-app front-end` to get the basic file setup (run the command in the root directory)
+- to run the rect app use `npm start`, we can now view it on <code style="color:red">http://localhost:3000</code>
+- add Bootstrap and Font Awesome CDN to index.html
+- install other necessary dependencies by running command `npm install --save react-router-dom` and `npm install --save axios`
+
+**Our frontend will have the following features:**
+1. Add, create, or save a new book
+2. Show all the books we have stored in the database
+3. Show a single book
+4. Update a book
+5. Delete a book
+
+### Components and hooks
+- Inside <code style="color:red">src</code> folder create another folder <code style="color:red">components</code> and add the files <code style="color:red">CreateBook.js,  ShowBookList.js, BookCard.js, ShowBookDetails.js, UpdateBookInfo.js</code>
+
+### Setting up routes
+In <code style="color:red">App.js</code> inside 
+<code style="color:red">src</code> folder, add all the required routes
+
+### Add styling
+Add styling by adding CSS code in <code style="color:red">App.css</code> inside 
+<code style="color:red">src</code> folder
+
+
+
+
+
+<code style="color:red">models</code>
