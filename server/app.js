@@ -2,6 +2,7 @@ const express = require('express');
 const connectDB = require('./config/db');   // connect database
 const cp = require('cookie-parser');        // connect cookie parser for authentication
 const jwt = require('jsonwebtoken');        // require jwt
+const cors = require('cors');               // to connect frontend and backend
 
 const app = express();
 
@@ -10,11 +11,14 @@ connectDB();
 
 // Import the books router
 const booksRouter = require('./routes/api/books');
+// Middleware
+app.use(cors({ origin: true, credentials: true })); // Allow cross-origin requests
+app.use(express.json({ extended: false }));
+app.use(cp()); // Use cookie-parser middleware
+
 // Use the books router
 app.use('/api/books', booksRouter);
 
-// Use cookie-parser middleware for handling JWT tokens in cookies
-app.use(cp());
 // Set Cookie
 app.get("/set/cookie", (req, res) => {
     const payload = {

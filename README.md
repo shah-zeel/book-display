@@ -113,13 +113,6 @@ We will use React.
 - add Bootstrap and Font Awesome CDN to index.html
 - install other necessary dependencies by running command `npm install --save react-router-dom` and `npm install --save axios`
 
-**Our frontend will have the following features:**
-1. Add, create, or save a new book
-2. Show all the books we have stored in the database
-3. Show a single book
-4. Update a book
-5. Delete a book
-
 ### Components and hooks
 - Inside <code style="color:red">src</code> folder create another folder <code style="color:red">components</code> and add the files <code style="color:red">CreateBook.js,  ShowBookList.js, BookCard.js, ShowBookDetails.js, UpdateBookInfo.js</code>
 
@@ -132,8 +125,13 @@ Add styling by adding CSS code in <code style="color:red">App.css</code> inside
 <code style="color:red">src</code> folder
 
 ### Add feature components
+1. **CreateBook.js** - Add, create, or save a new book
+2. **ShowBookList.js** - Show all the books we have stored in the database
+3. **ShowBookDetails.js** - Show a single book's details and option to Update/Delete a book
+4. **BookCard.js** - Show a single book card
+5. **UpdateBookInfo.js** - Update a book
 
-
-
+# Connecting frontend to backend
+- install <code style="color:red">cors</code> in backend using `npm install cors`
 
 <code style="color:red">models</code>
