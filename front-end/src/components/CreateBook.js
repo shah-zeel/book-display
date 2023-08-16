@@ -15,7 +15,7 @@ const CreateBook = (props) => {
     description: '',
     published_date: '',
     publisher: '',
-  });
+      });
 
   const onChange = (e) => {
     setBook({ ...book, [e.target.name]: e.target.value });
@@ -124,7 +124,14 @@ const CreateBook = (props) => {
                   onChange={onChange}
                 />
               </div>
-
+              <div className='form-group'>
+                <input
+                  type='file'
+                  name='image'
+                  className='form-control-file'
+                  onChange={onImageChange}
+                />
+              </div>
               <input
                 type='submit'
                 className='btn btn-outline-warning btn-block mt-4'

@@ -74,6 +74,8 @@
   margin: 0 auto;
   border-radius: 5px;
   overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.052) ;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .desc {

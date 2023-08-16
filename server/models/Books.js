@@ -27,6 +27,10 @@ const BookSchema = new mongoose.Schema({
   updated_date: {
     type: Date,
     default: Date.now
+  },
+  image: {
+    data: Buffer,         // allows us to store our image as data in the form of arrays
+    contentType: String, 
   }
 });
 

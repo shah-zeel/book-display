@@ -31,6 +31,7 @@ app.get("/set/cookie", (req, res) => {
         httpOnly: true
     }).send("Cookie Shipped");
 });
+
 // Return all headers
 app.get("/get/cookie", (req, res) => {
     const token = req.cookies.token;
