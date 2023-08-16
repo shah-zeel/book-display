@@ -129,7 +129,6 @@ const CreateBook = (props) => {
                   type='file'
                   name='image'
                   className='form-control-file'
-                  onChange={onImageChange}
                 />
               </div>
               <input

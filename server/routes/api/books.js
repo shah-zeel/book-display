@@ -2,9 +2,6 @@
 
 const express = require('express');
 const router = express.Router();
-/*
-const recommendations = require('../../recommendations'); // Import your recommendation logic
-*/
 
 // Load Book model
 const Book = require('../../models/Books');

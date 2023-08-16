@@ -135,3 +135,7 @@ Add styling by adding CSS code in <code style="color:red">App.css</code> inside
 - install <code style="color:red">cors</code> in backend using `npm install cors`
 
 <code style="color:red">models</code>
+
+
+# Image display
+Steps: Take image from frontend > convert to Base64 format > store it in MongoDB > retrieve it and render in frontend
